@@ -1,0 +1,26 @@
+ks121@Phobos /c/Users/ks121/Documents/Phys_567/06_Kevin_Shuman
+$ gcc -o Homework_6 Homework_6.c -lm -lgslcblas -lgsl
+
+ks121@Phobos /c/Users/ks121/Documents/Phys_567/06_Kevin_Shuman
+$ time ./Homework_6.exe
+
+ks121@Phobos /c/Users/ks121/Documents/Phys_567/06_Kevin_Shuman
+$ gnuplot
+
+        G N U P L O T
+        Version 5.2 patchlevel 7    last modified 2019-05-29
+
+        Copyright (C) 1986-1993, 1998, 2004, 2007-2018
+        Thomas Williams, Colin Kelley and many others
+
+        gnuplot home:     http://www.gnuplot.info
+        faq, bugs, etc:   type "help FAQ"
+        immediate help:   type "help"  (plot window: hit 'h')
+
+Terminal type is now 'wxt'
+Encoding set to 'cp1252'.
+gnuplot> set title "Tajectory for 1 micrometer particle"
+gnuplot> set xlabel "X [m]"
+gnuplot> set ylabel "Y [m]"
+gnuplot> plot "Trajectories_1.dat" using 2:3 every 1 points 0.1
+gnuplot>

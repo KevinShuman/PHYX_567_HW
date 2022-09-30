@@ -1,0 +1,26 @@
+Last login: Wed Jan 15 15:42:38 on ttys002
+(base) thunderbird2:~ kevinshuman$ cd Documents/Phys_567/Homeworks/Homework_1/
+(base) thunderbird2:Homework_1 kevinshuman$ gcc -w -o Phys_567_Homework_1 Phys_567_Homework_1.c -lgsl -lgslcblas -lm
+(base) thunderbird2:Homework_1 kevinshuman$ ./Phys_567_Homework_1
+(base) thunderbird2:Homework_1 kevinshuman$ gnuplot
+
+	G N U P L O T
+	Version 5.2 patchlevel 7    last modified 2019-05-29 
+
+	Copyright (C) 1986-1993, 1998, 2004, 2007-2018
+	Thomas Williams, Colin Kelley and many others
+
+	gnuplot home:     http://www.gnuplot.info
+	faq, bugs, etc:   type "help FAQ"
+	immediate help:   type "help"  (plot window: hit 'h')
+
+Terminal type is now 'qt'
+gnuplot> set xlabel "Wavelength (nm)"
+gnuplot> set ylabel "Reflectivity"
+gnuplot> set title "Reflectivity using xray1727 data"
+gnuplot> plot "xray1727_interp.dat" using 1:2 every 1 points 0.01, "xray1727_data.txt" using 1:2 every 1 points 1
+gnuplot> set title "Reflectivity using xray8528 data"
+gnuplot> plot "xray8528_interp.dat" using 1:2 every 1 points 0.01, "xray8528_data.txt" using 1:2 every 1 points 1
+gnuplot> set title "Reflectivity using xray8529 data"
+gnuplot> plot "xray8529_interp.dat" using 1:2 every 1 points 0.01, "xray8529_data.txt" using 1:2 every 1 points 1
+gnuplot> 

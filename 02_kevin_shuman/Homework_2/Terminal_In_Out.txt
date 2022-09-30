@@ -1,0 +1,93 @@
+Last login: Tue Jan 28 11:10:56 on ttys003
+(base) thunderbird2:~ kevinshuman$ cd Documents/Phys_567/Homeworks/Homework_2/
+(base) thunderbird2:Homework_2 kevinshuman$ gcc -w -o Homework2 Homework2.c -lgsl -lgslcblas -lm
+(base) thunderbird2:Homework_2 kevinshuman$ time ./Homework2
+Enter the step size:1
+
+
+The result is: -2.539973431252824e+00
+
+real	0m6.028s
+user	0m0.001s
+sys	0m0.149s
+(base) thunderbird2:Homework_2 kevinshuman$ time ./Homework2
+Enter the step size:10
+
+
+The result is: -2.560205840746799e+00
+
+real	0m1.993s
+user	0m0.001s
+sys	0m0.002s
+(base) thunderbird2:Homework_2 kevinshuman$ time ./Homework2
+Enter the step size:100
+
+
+The result is: -2.556648300022910e+00
+
+real	0m2.248s
+user	0m0.001s
+sys	0m0.002s
+(base) thunderbird2:Homework_2 kevinshuman$ time ./Homework2
+Enter the step size:1000
+
+
+The result is: -2.556288708252151e+00
+
+real	0m2.394s
+user	0m0.003s
+sys	0m0.003s
+(base) thunderbird2:Homework_2 kevinshuman$ time ./Homework2
+Enter the step size:10000
+
+
+The result is: -2.556252316201274e+00
+
+real	0m2.607s
+user	0m0.014s
+sys	0m0.004s
+(base) thunderbird2:Homework_2 kevinshuman$ time ./Homework2
+Enter the step size:100000
+
+
+The result is: -2.556248643230929e+00
+
+real	0m3.790s
+user	0m0.126s
+sys	0m0.009s
+(base) thunderbird2:Homework_2 kevinshuman$ time ./Homework2
+Enter the step size:1000000
+
+
+The result is: -2.556248273334583e+00
+
+real	0m13.879s
+user	0m1.253s
+sys	0m0.065s
+(base) thunderbird2:Homework_2 kevinshuman$ time ./Homework2
+Enter the step size:10000000
+
+
+The result is: -2.556248236138734e+00
+
+real	0m17.361s
+user	0m12.624s
+sys	0m0.756s
+(base) thunderbird2:Homework_2 kevinshuman$ time ./Homework2
+Enter the step size:100000000
+
+
+The result is: -2.556248232402580e+00
+
+real	2m19.298s
+user	2m6.404s
+sys	0m7.897s
+(base) thunderbird2:Homework_2 kevinshuman$ time ./Homework2
+Enter the step size:1000000000
+
+
+The result is: -2.556248232027416e+00
+
+real	22m58.282s
+user	21m23.834s
+sys	1m22.387s

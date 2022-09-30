@@ -1,0 +1,178 @@
+Last login: Thu Feb 13 09:46:57 on ttys003
+(base) thunderbird2:~ kevinshuman$ cd Documents/Phys_567/Homeworks/Homework_3/
+(base) thunderbird2:Homework_3 kevinshuman$ gcc -w -o Homework3 Homework3.c -lgsl -lgslcblas -lm
+(base) thunderbird2:Homework_3 kevinshuman$ time ./Homework3
+The number of random points, N: 4096 
+The number of iterations,   n: 1024 
+The mean for N = 64 points, stratified, is 1.700000 and the standard deviation is 1.138420
+
+The mean for N = 64 points, not stratified, is 1.225000 and the standard deviation is 1.359779
+
+The mean for N = 256 points, stratified, is 1.537500 and the standard deviation is 0.292511
+
+The mean for N = 256 points, not stratified, is 1.456250 and the standard deviation is 0.731277
+
+The mean for N = 1024 points, stratified, is 1.503125 and the standard deviation is 0.100798
+
+The mean for N = 1024 points, not stratified, is 1.570313 and the standard deviation is 0.340933
+
+The mean for N = 4096 points, stratified, is 1.507812 and the standard deviation is 0.049411
+
+The mean for N = 4096 points, not stratified, is 1.515234 and the standard deviation is 0.159349
+
+The mean for N = 16384 points, stratified, is 1.511230 and the standard deviation is 0.021308
+
+The mean for N = 16384 points, not stratified, is 1.518848 and the standard deviation is 0.125071
+
+The mean for N = 65536 points, stratified, is 1.510254 and the standard deviation is 0.007566
+
+The mean for N = 65536 points, not stratified, is 1.500732 and the standard deviation is 0.041227
+
+
+real	3m36.969s
+user	3m26.133s
+sys	0m10.799s
+(base) thunderbird2:Homework_3 kevinshuman$ gnuplot
+
+	G N U P L O T
+	Version 5.2 patchlevel 7    last modified 2019-05-29 
+
+	Copyright (C) 1986-1993, 1998, 2004, 2007-2018
+	Thomas Williams, Colin Kelley and many others
+
+	gnuplot home:     http://www.gnuplot.info
+	faq, bugs, etc:   type "help FAQ"
+	immediate help:   type "help"  (plot window: hit 'h')
+
+Terminal type is now 'qt'
+gnuplot> f(x) = j*x**k
+gnuplot> fit f(x) "Stand_Div.txt" using  1:2 via j, k
+iter      chisq       delta/lim  lambda   j             k            
+   0 4.5812861244e+09   0.00e+00  2.17e+05    1.000000e+00   1.000000e+00
+   1 7.3339515063e+08  -5.25e+05  2.17e+04    9.924211e-01   9.173084e-01
+   2 1.0188996053e+08  -6.20e+05  2.17e+03    9.819808e-01   8.281847e-01
+   3 1.3988495647e+07  -6.28e+05  2.17e+02    9.320312e-01   7.419895e-01
+   4 1.3374861002e+06  -9.46e+05  2.17e+01    4.806580e-01   6.949457e-01
+   5 1.2646018412e+03  -1.06e+08  2.17e+00    1.529853e-02   6.920432e-01
+   6 4.8243218693e+01  -2.52e+06  2.17e-01    3.776646e-03   6.697578e-01
+   7 7.9601004556e+00  -5.06e+05  2.17e-02    4.860337e-03   5.534478e-01
+   8 2.2779015244e+00  -2.49e+05  2.17e-03    1.726474e-02   2.302720e-01
+   * 2.5421658838e+00   1.04e+04  2.17e-02    3.741520e-01  -1.811408e+00
+   * 2.5421589901e+00   1.04e+04  2.17e-01    3.736148e-01  -1.808214e+00
+   * 2.5411130492e+00   1.04e+04  2.17e+00    3.272255e-01  -1.532445e+00
+   9 2.1164108959e+00  -7.63e+03  2.17e-01    5.063049e-02   1.108390e-01
+   * 2.5359111995e+00   1.65e+04  2.17e+00    8.152471e-01  -1.409331e+00
+  10 1.7607844335e+00  -2.02e+04  2.17e-01    1.690603e-01   8.705638e-03
+   * 2.4096072500e+00   2.69e+04  2.17e+00    1.559582e+00  -8.701281e-01
+  11 1.3764550902e+00  -2.79e+04  2.17e-01    3.312903e-01  -7.383758e-03
+   * 1.8341546485e+00   2.50e+04  2.17e+00    1.733516e+00  -5.085134e-01
+  12 1.1979723412e+00  -1.49e+04  2.17e-01    4.640144e-01  -4.213795e-02
+   * 1.5297717140e+00   2.17e+04  2.17e+00    2.039306e+00  -4.578534e-01
+  13 1.0742683152e+00  -1.15e+04  2.17e-01    5.732710e-01  -5.750987e-02
+   * 1.2684478232e+00   1.53e+04  2.17e+00    2.183326e+00  -4.148189e-01
+  14 9.8473547430e-01  -9.09e+03  2.17e-01    6.688451e-01  -7.287771e-02
+   * 1.0966805382e+00   1.02e+04  2.17e+00    2.322097e+00  -3.946020e-01
+  15 9.1461879025e-01  -7.67e+03  2.17e-01    7.536692e-01  -8.470437e-02
+   * 9.6287383187e-01   5.01e+03  2.17e+00    2.428419e+00  -3.797230e-01
+  16 8.5758232599e-01  -6.65e+03  2.17e-01    8.304787e-01  -9.484152e-02
+   * 8.5831182530e-01   8.50e+01  2.17e+00    2.517865e+00  -3.689720e-01
+  17 8.0982202306e-01  -5.90e+03  2.17e-01    9.009073e-01  -1.035728e-01
+  18 7.7377535566e-01  -4.66e+03  2.17e-02    2.593614e+00  -3.605999e-01
+  19 4.6006066872e-01  -6.82e+04  2.17e-03    8.027287e+00  -5.499008e-01
+  20 1.2260909058e-01  -2.75e+05  2.17e-04    9.009278e+00  -4.169923e-01
+  21 3.9704987775e-03  -2.99e+06  2.17e-05    9.583840e+00  -4.662638e-01
+  22 2.9152622791e-03  -3.62e+04  2.17e-06    1.004687e+01  -4.798319e-01
+  23 2.9126236307e-03  -9.06e+01  2.17e-07    1.006592e+01  -4.800240e-01
+   * 2.9126236469e-03   5.56e-04  2.17e-06    1.006577e+01  -4.800205e-01
+   * 2.9126236469e-03   5.56e-04  2.17e-05    1.006577e+01  -4.800205e-01
+   * 2.9126236469e-03   5.56e-04  2.17e-04    1.006577e+01  -4.800205e-01
+   * 2.9126236469e-03   5.56e-04  2.17e-03    1.006577e+01  -4.800205e-01
+   * 2.9126236466e-03   5.48e-04  2.17e-02    1.006577e+01  -4.800205e-01
+   * 2.9126236335e-03   9.60e-05  2.17e-01    1.006582e+01  -4.800214e-01
+  24 2.9126236190e-03  -4.00e-04  2.17e-02    1.006591e+01  -4.800233e-01
+iter      chisq       delta/lim  lambda   j             k            
+
+After 24 iterations the fit converged.
+final sum of squares of residuals : 0.00291262
+rel. change during last iteration : -3.99909e-09
+
+degrees of freedom    (FIT_NDF)                        : 4
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0269844
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.000728156
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+j               = 10.0659          +/- 0.8481       (8.425%)
+k               = -0.480023        +/- 0.01776      (3.699%)
+
+correlation matrix of the fit parameters:
+                j      k      
+j               1.000 
+k              -0.980  1.000 
+gnuplot> f(x) = j*x**k
+gnuplot> fit f(x) "Stand_Div.txt" using  1:2 via j, k
+iter      chisq       delta/lim  lambda   j             k            
+   0 2.9126236190e-03   0.00e+00  1.14e+00    1.006591e+01  -4.800233e-01
+   * 2.9126236194e-03   1.08e-05  1.14e+01    1.006590e+01  -4.800231e-01
+   1 2.9126236190e-03  -9.49e-07  1.14e+00    1.006591e+01  -4.800233e-01
+iter      chisq       delta/lim  lambda   j             k            
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.00291262
+rel. change during last iteration : -9.49114e-12
+
+degrees of freedom    (FIT_NDF)                        : 4
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0269844
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.000728156
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+j               = 10.0659          +/- 0.8481       (8.425%)
+k               = -0.480023        +/- 0.01776      (3.699%)
+
+correlation matrix of the fit parameters:
+                j      k      
+j               1.000 
+k              -0.980  1.000 
+gnuplot> g(x) = c*x**d
+gnuplot> fit g(x) "Stand_Div.txt" using  1:3 via c, d
+iter      chisq       delta/lim  lambda   c             d            
+   0 1.5252272908e-03   0.00e+00  1.41e+00    5.646803e+01  -9.392692e-01
+   * 1.5252272912e-03   2.28e-05  1.41e+01    5.646804e+01  -9.392692e-01
+   * 1.5252272908e-03   1.83e-08  1.41e+02    5.646803e+01  -9.392692e-01
+   1 1.5252272908e-03  -1.28e-10  1.41e+01    5.646803e+01  -9.392692e-01
+iter      chisq       delta/lim  lambda   c             d            
+
+After 1 iterations the fit converged.
+final sum of squares of residuals : 0.00152523
+rel. change during last iteration : -1.27952e-15
+
+degrees of freedom    (FIT_NDF)                        : 4
+rms of residuals      (FIT_STDFIT) = sqrt(WSSR/ndf)    : 0.0195271
+variance of residuals (reduced chisquare) = WSSR/ndf   : 0.000381307
+
+Final set of parameters            Asymptotic Standard Error
+=======================            ==========================
+c               = 56.468           +/- 9.869        (17.48%)
+d               = -0.939269        +/- 0.04083      (4.347%)
+
+correlation matrix of the fit parameters:
+                c      d      
+c               1.000 
+d              -0.996  1.000 
+gnuplot> set xlabel "Log Number of Points N"
+gnuplot> set ylabel "Log Standard Deviation"
+gnuplot> set title "Stratified and Non-Stratified Monte Carlo Comparison"
+gnuplot> set log
+gnuplot> plot "Stand_Div.txt" using 1:3 title "Stratified", g(x) title "Fit Stratified", "Stand_Div.txt" using 1:2 title "Non-Stratified", f(x) title "Fit Non-Stratified"
+
+Warning: slow font initialization
+gnuplot> plot "Stand_Div.txt" using 1:3 title "Stratified", g(x) title "Fit Stratified", "Stand_Div.txt" using 1:2 title "Non-Stratified", f(x) title "Fit Non-Stratified"
+gnuplot> reset
+gnuplot> h(x) = 6.14*x**(-1.95)
+gnuplot> set xlabel "Log Number of Iterations n"
+gnuplot> set ylabel "Log of the Difference in Area"
+gnuplot> set title "Difference in Area for Changing n"
+gnuplot> set log
+gnuplot> plot "Area_n.dat" using 1:(-1*$2) title "Area Diff", h(x) title "Fit"
+gnuplot> 
